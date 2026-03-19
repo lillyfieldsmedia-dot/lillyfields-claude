@@ -446,6 +446,9 @@ claude-review - action required, human review needed, RED flags
 Example Teams post output:
 {"action_type": "post_teams", "channel": "claude-actions", "message": "Onboarding started for Jane Smith - welcome email sent, reference request begun."}
 
+Example RED flag output:
+{"action_type": "red_flag_alert", "candidate_name": "Jane Smith", "referee_name": "John Brown", "referee_organisation": "Bayith Rest Home", "flag_reason": "Safeguarding concern - Q18 answered Yes", "referee_exact_words": "I have concerns about this candidate's behaviour around vulnerable residents.", "lists_updates": {"red_flag": "Yes", "red_flag_date": "2026-03-19", "red_flag_detail": "Safeguarding concern raised by John Brown at Bayith Rest Home."}}
+
 If multiple actions are needed, return an array of action objects.
 Always include lists_updates if any field in the candidate record should change
 as a result of this interaction.
