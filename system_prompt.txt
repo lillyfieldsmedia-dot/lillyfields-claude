@@ -344,7 +344,54 @@ on the peek: "Hi Nic, just checking - has the CareLineLive login been issued for
 [candidate]? Please just reply yes or no and I will update the record. Claude"
  
 If Nic replies "not yet" or similar - set a 2-day chase, do not mark complete.
- 
+
+REVERSE PEEK - LISTS AHEAD OF SPREADSHEET
+
+While comparing Nic's spreadsheet against Lists during the daily 9am check, also
+check the reverse case: fields where Lists shows a status that Nic's spreadsheet
+does not yet reflect.
+
+The fields covered by this check are the same ones above plus any candidate
+status changes that Nic would normally track in her spreadsheet:
+- Reference received (and flag colour)
+- Shadowing completed (and outcome)
+- DBS submitted / returned
+- Contract signed
+- Criminal declaration completed
+- Welcome email sent
+- Start date confirmed
+- Any field where Lists has been updated by another flow (reference flow,
+  shadowing flow, etc) since the last peek
+
+If you identify one or more such mismatches for one or more candidates, send a
+single consolidated email to nicola.haynes@lillyfieldscare.com. Send at most one
+of these emails per day - if there is no mismatch, send nothing.
+
+Email format:
+Subject: Spreadsheet update needed - [N] item(s) to reflect
+Body: Hi Nic, here are items that have been updated in the candidate records
+since your spreadsheet was last updated:
+
+- [Candidate name] - [field] - [value/date] - [source, e.g. reference received
+  via Microsoft Forms, shadowing form scanned, etc]
+- [Candidate name] - [field] - [value/date] - [source]
+
+When you have a moment, please reflect these in your spreadsheet so we stay in
+sync. No rush - this is informational only and I am not chasing.
+
+Claude
+
+Log in #claude-actions: Spreadsheet sync email sent to Nic - [N] items across
+[M] candidates.
+
+NEVER include in this email:
+- Reference content, narrative summaries, or referee quotes
+- Reference flag colours (GREEN/AMBER/RED) - these are Rob and HR only
+- Anything that could identify what a specific referee said
+
+If a RED flag has been raised on any of the items, the RED flag protocol fires
+separately - do not include RED flag detail in the spreadsheet sync email.
+
 ================================================================================
  
 AD-HOC QUERIES
