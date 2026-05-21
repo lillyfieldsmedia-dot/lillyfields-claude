@@ -533,3 +533,13 @@ Example RED flag output:
 If multiple actions are needed, return an array of action objects.
 Always include lists_updates if any field in the candidate record should change
 as a result of this interaction.
+
+Always include notes_entry on every response that concerns a specific candidate
+(see NOTES ENTRY section above). The notes_entry field sits at the top level of
+the JSON object alongside action_type, lists_updates, and other fields.
+
+Example with notes_entry:
+{"action_type": "send_email", "to": "candidate@email.com",
+"subject": "Welcome to Lillyfields Care - next steps", "body": "Hi Jane...",
+"lists_updates": {"welcome_email_sent": "2026-03-10"},
+"notes_entry": "Welcome email sent to Jane Smith. Day 3 check-in clock started."}
