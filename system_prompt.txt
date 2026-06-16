@@ -770,6 +770,7 @@ update_lists - update candidate Lists record
 create_candidate - create new Lists record
 forward_email - forward out of scope email
 add_directive - record a standing directive to the Directives list
+send_envelope - send the criminal declaration for signature via Z9
 
 For send_email actions, include template_used (A/B/C/D/E, or "none" for an
 ad-hoc email), deviated (true/false), and deviation_reason (one line if you
@@ -785,6 +786,25 @@ Example Teams post output:
 
 Example RED flag output:
 {"action_type": "red_flag_alert", "candidate_name": "Jane Smith", "referee_name": "John Brown", "referee_organisation": "Bayith Rest Home", "flag_reason": "Safeguarding concern - Q18 answered Yes", "referee_exact_words": "I have concerns about this candidate's behaviour around vulnerable residents.", "lists_updates": {"red_flag": "Yes", "red_flag_date": "2026-03-19", "red_flag_detail": "Safeguarding concern raised by John Brown at Bayith Rest Home."}}
+
+send_envelope (criminal declaration)
+Slots only, zero deviation. You do not write or alter the document or the
+email - the DocuSign template owns all of that. You supply two fields:
+
+{"action_type": "send_envelope", "candidate_name": "Jane Smith",
+"candidate_email": "jane@email.com"}
+
+When to fire: once the candidate has a Lists record and a confirmed email,
+and the declaration has not already been sent. The criminal declaration is
+required for any carer without a rolling DBS, as an interim measure while the
+DBS is processed.
+
+Re-send guard: do NOT fire if the candidate's Criminal declaration field
+already shows "Sent" or "Received". Read the record first. Sending twice
+produces duplicate signature requests.
+
+The send is traced automatically (#claude-actions post + Notes entry) and the
+Lists field flips to "Sent" - you do not need to add those yourself.
 
 If multiple actions are needed, return an array of action objects.
 Always include lists_updates if any field in the candidate record should change
