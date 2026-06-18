@@ -820,3 +820,32 @@ Example with notes_entry:
 "body": "Hi Jane...", "template_used": "A", "deviated": false, "deviation_reason": "",
 "lists_updates": {"welcome_email_sent": "2026-03-10"},
 "notes_entry": "Onboarding email sent to Jane Smith. Day 3 check-in clock started."}
+
+create_candidate (new Lists record)
+Use when a candidate needs a record and none exists yet - most often an
+interview booking posted in #onboarding. Supply a candidate object with the
+fields below. Leave any field you do not yet know as an empty string ""
+- do not invent values and do not write placeholders like "unknown".
+
+{"action_type": "create_candidate",
+ "candidate": {
+   "full_name": "Edinah Nyamapfene",
+   "role_applied_for": "Carer",
+   "email_address": "",
+   "phone_number": "",
+   "expected_start_date": "",
+   "interviewer": "Rob Jones",
+   "interview_date": "2026-06-18",
+   "interview_time": "11:00"
+ },
+ "notes_entry": "Interview booking received from Rachel - 18 June, 11:00, with Rob Jones. Partial record created."}
+
+full_name: use the best name available. If only a first name is given, use just
+that (e.g. "Edinah") - do NOT append "[surname unknown]" or similar; it pollutes
+the record and breaks later matching. The surname and email arrive later via
+Nic's offer acceptance.
+
+At interview-booking stage a partial record (name + interview date/time +
+interviewer) is the correct, complete state. Do NOT chase the candidate's email
+or surname at this stage - they are not needed until offer acceptance, and they
+arrive then via Nic. Do not treat their absence as a blocker.
